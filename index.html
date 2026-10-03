@@ -171,7 +171,7 @@
 
         .activity-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 32px;
         }
 
@@ -193,7 +193,7 @@
         }
 
         .card-preview {
-            height: 190px;
+            height: 180px;
             background-size: cover;
             background-position: center;
             position: relative;
@@ -207,6 +207,11 @@
         .card-preview-2 {
             background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(15,23,42,0.6) 100%), 
                               url('https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80');
+        }
+
+        .card-preview-3 {
+            background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(15,23,42,0.6) 100%), 
+                              url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80');
         }
 
         .card-tag {
@@ -225,7 +230,7 @@
         }
 
         .card-body {
-            padding: 28px;
+            padding: 24px;
             display: flex;
             flex-direction: column;
             flex: 1;
@@ -233,17 +238,17 @@
         }
 
         .card-title {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 700;
             color: #0f172a;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .card-tech {
             font-size: 12px;
             font-weight: 600;
             color: #0284c7;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -252,7 +257,7 @@
             font-size: 14px;
             color: #64748b;
             line-height: 1.6;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .btn-card {
@@ -283,25 +288,36 @@
         }
 
         .about-content {
-            max-width: 700px;
+            max-width: 750px;
             margin: 0 auto;
         }
 
         .about-title {
             color: #ffffff;
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 700;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
+        }
+
+        .about-text {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #cbd5e1;
         }
 
         /* FOOTER */
         footer {
             background: #081225;
-            padding: 24px;
+            padding: 28px 24px;
             text-align: center;
             font-size: 13px;
             color: #64748b;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
+            line-height: 1.6;
+        }
+
+        footer strong {
+            color: #94a3b8;
         }
 
         @media (max-width: 768px) {
@@ -340,7 +356,7 @@
     <!-- HERO SECTION -->
     <section class="hero" id="home">
         <h1 class="hero-title">Student Activity Compilation</h1>
-        <p class="hero-subtitle">HTML &bull; CSS &bull; Creativity &bull; Future Ready</p>
+        <p class="hero-subtitle">HTML &bull; CSS &bull; Creativity &bull; Responsive Design</p>
         <a href="#activities" class="btn-primary">Explore Activities</a>
     </section>
 
@@ -350,33 +366,48 @@
 
         <div class="activity-grid">
 
-            <!-- E-PORTFOLIO CARD -->
+            <!-- ACTIVITY 1: PERSONAL PORTFOLIO -->
             <div class="card">
                 <div class="card-preview card-preview-1">
-                    <span class="card-tag">ACTIVITY 03</span>
-                </div>
-                <div class="card-body">
-                    <div>
-                        <h3 class="card-title">E-Portfolio</h3>
-                        <p class="card-tech">HTML &amp; CSS</p>
-                        <p class="card-desc">An interactive e-portfolio highlighting academic transition, technical skillsets, and creative projects.</p>
-                    </div>
-                    <a href="./ACTIVITY%203%20E%20PORTFOLIO%20MENDOZA/baj.html" class="btn-card">View Project &rarr;</a>
-                </div>
-            </div>
-
-            <!-- PERSONAL WEBSITE CARD -->
-            <div class="card">
-                <div class="card-preview card-preview-2">
                     <span class="card-tag">ACTIVITY 01</span>
                 </div>
                 <div class="card-body">
                     <div>
-                        <h3 class="card-title">Personal Website</h3>
-                        <p class="card-tech">HTML &amp; CSS</p>
-                        <p class="card-desc">A customized responsive website showcasing personal background, passions, and creative showcase.</p>
+                        <h3 class="card-title">Personal Portfolio</h3>
+                        <p class="card-tech">HTML5 &amp; CSS3</p>
+                        <p class="card-desc">An interactive profile featuring student background, academic background, technical skills, and achievements.</p>
                     </div>
-                    <a href="./PERSONAL%20WEBSITE%20MENDOZA/baj.html" class="btn-card">View Project &rarr;</a>
+                    <a href="./PERSONAL%20WEBSITE%20MENDOZA/baj.html" class="btn-card" alt="View Personal Portfolio Activity">View Project &rarr;</a>
+                </div>
+            </div>
+
+            <!-- ACTIVITY 2: MARKETPLACE / E-PORTFOLIO -->
+            <div class="card">
+                <div class="card-preview card-preview-2">
+                    <span class="card-tag">ACTIVITY 02</span>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">E-Portfolio / Marketplace</h3>
+                        <p class="card-tech">HTML5 &amp; CSS Layouts</p>
+                        <p class="card-desc">A structured webpage featuring core service offerings, showcase cards, and brand identity presentation.</p>
+                    </div>
+                    <a href="./ACTIVITY%203%20E%20PORTFOLIO%20MENDOZA/baj.html" class="btn-card" alt="View E-Portfolio Project">View Project &rarr;</a>
+                </div>
+            </div>
+
+            <!-- ACTIVITY 3: RESPONSIVE DESIGN -->
+            <div class="card">
+                <div class="card-preview card-preview-3">
+                    <span class="card-tag">ACTIVITY 03</span>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">Responsive Design</h3>
+                        <p class="card-tech">CSS3 Media Queries &amp; Flexbox</p>
+                        <p class="card-desc">A modern compilation site built to adapt dynamically across mobile, tablet, and desktop viewports.</p>
+                    </div>
+                    <a href="#home" class="btn-card" alt="View Responsive Compilation Landing Page">View Project &rarr;</a>
                 </div>
             </div>
 
@@ -386,14 +417,17 @@
     <!-- ABOUT SECTION -->
     <section class="about-section" id="about">
         <div class="about-content">
-            <h3 class="about-title">About This Compilation</h3>
-            <p>This repository serves as an official showcase of web development coursework for CBIA100 at Mapúa Malayan Colleges Laguna.</p>
+            <h3 class="about-title">About the Student &amp; Project</h3>
+            <p class="about-text">
+                Welcome to my CBIA100 activity compilation page! Through these activities, I gained hands-on experience in building structured HTML5 web pages, styling with CSS3, applying Flexbox and Grid layouts, and implementing media queries for responsive web development across all screen sizes.
+            </p>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        &copy; 2026 CBIA100 &bull; Student Activity Compilation
+        <p><strong>Joeffrey Louisean S. Mendoza</strong> &bull; CBIA100 &bull; Academic Year 2025–2026</p>
+        <p>E.T. Yuchengco College of Business &bull; Mapúa Malayan Colleges Laguna</p>
     </footer>
 
 </body>
