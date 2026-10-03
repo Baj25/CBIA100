@@ -25,7 +25,7 @@
         /* HEADER & NAVBAR */
         header {
             background: #ffffff;
-            padding: 16px 8%;
+            padding: 16px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -144,10 +144,11 @@
 
         /* ACTIVITIES SECTION */
         .activities-container {
-            max-width: 1250px;
+            max-width: 1320px;
             margin: 0 auto;
-            padding: 60px 24px 90px;
+            padding: 60px 20px 90px;
             flex: 1;
+            width: 100%;
         }
 
         .section-title {
@@ -169,11 +170,11 @@
             border-radius: 2px;
         }
 
-        /* 3 CARDS SINGLE ROW GRID */
+        /* FORCE 3 CARDS IN 1 ROW ON DESKTOP */
         .activity-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
+            gap: 20px;
         }
 
         /* CARD DESIGN */
@@ -231,7 +232,7 @@
         }
 
         .card-body {
-            padding: 24px;
+            padding: 22px;
             display: flex;
             flex-direction: column;
             flex: 1;
@@ -255,9 +256,9 @@
         }
 
         .card-desc {
-            font-size: 14px;
+            font-size: 13.5px;
             color: #64748b;
-            line-height: 1.6;
+            line-height: 1.55;
             margin-bottom: 20px;
         }
 
@@ -322,27 +323,9 @@
         }
 
         /* RESPONSIVE LAYOUT FOR SMALLER SCREENS */
-        @media (max-width: 992px) {
-            .activity-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 640px) {
-            header {
-                padding: 16px 5%;
-            }
-
-            .hero-title {
-                font-size: 34px;
-            }
-
+        @media (max-width: 900px) {
             .activity-grid {
                 grid-template-columns: 1fr;
-            }
-
-            nav {
-                gap: 16px;
             }
         }
     </style>
