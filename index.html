@@ -144,7 +144,7 @@
 
         /* ACTIVITIES SECTION */
         .activities-container {
-            max-width: 1100px;
+            max-width: 1250px;
             margin: 0 auto;
             padding: 60px 24px 90px;
             flex: 1;
@@ -169,10 +169,11 @@
             border-radius: 2px;
         }
 
+        /* 3 CARDS SINGLE ROW GRID */
         .activity-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
         }
 
         /* CARD DESIGN */
@@ -201,12 +202,12 @@
 
         .card-preview-1 {
             background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(15,23,42,0.6) 100%), 
-                              url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80');
+                              url('https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80');
         }
 
         .card-preview-2 {
             background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(15,23,42,0.6) 100%), 
-                              url('https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80');
+                              url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80');
         }
 
         .card-preview-3 {
@@ -320,13 +321,24 @@
             color: #94a3b8;
         }
 
-        @media (max-width: 768px) {
+        /* RESPONSIVE LAYOUT FOR SMALLER SCREENS */
+        @media (max-width: 992px) {
+            .activity-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
             header {
                 padding: 16px 5%;
             }
 
             .hero-title {
                 font-size: 34px;
+            }
+
+            .activity-grid {
+                grid-template-columns: 1fr;
             }
 
             nav {
@@ -366,14 +378,14 @@
 
         <div class="activity-grid">
 
-            <!-- ACTIVITY 01: PROJECT 1 -->
+            <!-- CARD 1: MARKETPLACE -->
             <div class="card">
                 <div class="card-preview card-preview-1">
                     <span class="card-tag">ACTIVITY 01</span>
                 </div>
                 <div class="card-body">
                     <div>
-                        <h3 class="card-title">Project 1</h3>
+                        <h3 class="card-title">Marketplace</h3>
                         <p class="card-tech">HTML5 &amp; CSS3</p>
                         <p class="card-desc">A customized showcase presenting personal services, featured offerings, and brand presentation.</p>
                     </div>
@@ -381,14 +393,14 @@
                 </div>
             </div>
 
-            <!-- ACTIVITY 02: PROJECT 2 -->
+            <!-- CARD 2: E-PORTFOLIO -->
             <div class="card">
                 <div class="card-preview card-preview-2">
                     <span class="card-tag">ACTIVITY 02</span>
                 </div>
                 <div class="card-body">
                     <div>
-                        <h3 class="card-title">Project 2</h3>
+                        <h3 class="card-title">E-Portfolio</h3>
                         <p class="card-tech">HTML5 &amp; CSS Layouts</p>
                         <p class="card-desc">An interactive e-portfolio featuring student background, academic track, skills, and accomplishments.</p>
                     </div>
@@ -396,7 +408,7 @@
                 </div>
             </div>
 
-            <!-- ACTIVITY 03: RESPONSIVE DESIGN -->
+            <!-- CARD 3: RESPONSIVE DESIGN -->
             <div class="card">
                 <div class="card-preview card-preview-3">
                     <span class="card-tag">ACTIVITY 03</span>
