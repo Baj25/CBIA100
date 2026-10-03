@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marketplace | Product & Service Hub</title>
+    <title>CBIA100 | Student Activity Compilation</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
@@ -15,373 +15,417 @@
         }
 
         body {
-            background-color: #f8fafc;
+            background-color: #081225;
             color: #1e293b;
-            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
-        /* NAVIGATION BAR */
+        /* HEADER & NAVBAR */
         header {
             background: #ffffff;
             padding: 16px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
-        .logo {
-            font-size: 20px;
-            font-weight: 800;
-            color: #0284c7;
-            text-decoration: none;
-            letter-spacing: -0.5px;
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        .logo span {
+        .college-tag {
+            border-left: 2px solid #cbd5e1;
+            padding-left: 12px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .college-title {
+            font-size: 15px;
+            font-weight: 800;
             color: #0f172a;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+        }
+
+        .college-sub {
+            font-size: 10px;
+            font-weight: 500;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
         }
 
         nav {
             display: flex;
-            gap: 24px;
+            gap: 32px;
         }
 
         nav a {
             text-decoration: none;
-            color: #475569;
+            color: #334155;
             font-weight: 600;
-            font-size: 14px;
-            transition: color 0.3s ease;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
         nav a:hover {
             color: #0284c7;
         }
 
-        /* HERO SECTION */
-        .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: #ffffff;
-            padding: 90px 20px;
-            text-align: center;
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #0284c7;
+            transition: width 0.3s ease;
         }
 
-        .hero-badge {
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(180deg, rgba(10, 25, 47, 0.75) 0%, rgba(8, 18, 37, 0.95) 100%), 
+                        url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            padding: 90px 20px 80px;
+            text-align: center;
+            color: #ffffff;
+            box-shadow: inset 0 -20px 30px rgba(8, 18, 37, 0.8);
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            color: #94a3b8;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .btn-primary {
             display: inline-block;
-            background: rgba(14, 165, 233, 0.15);
-            color: #38bdf8;
-            font-size: 12px;
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 12px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.6);
+        }
+
+        /* ACTIVITIES SECTION */
+        .activities-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 24px 90px;
+            flex: 1;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
             font-weight: 700;
-            padding: 6px 16px;
+            color: #ffffff;
+            margin-bottom: 48px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: #0284c7;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        /* CARD DESIGN */
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            transition: all 0.35s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(2, 132, 199, 0.25);
+        }
+
+        .card-preview {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .card-preview-1 {
+            background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(15,23,42,0.6) 100%), 
+                              url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80');
+        }
+
+        .card-preview-2 {
+            background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(15,23,42,0.6) 100%), 
+                              url('https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80');
+        }
+
+        .card-preview-3 {
+            background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(15,23,42,0.6) 100%), 
+                              url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80');
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(4px);
+            color: #38bdf8;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 6px 12px;
             border-radius: 20px;
-            margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .hero h1 {
-            font-size: 42px;
-            font-weight: 800;
-            margin-bottom: 16px;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 16px;
-            color: #94a3b8;
-            max-width: 600px;
-            margin: 0 auto 32px;
-        }
-
-        .btn-cta {
-            display: inline-block;
-            background: #0284c7;
-            color: #ffffff;
-            font-weight: 600;
-            font-size: 15px;
-            padding: 14px 36px;
-            border-radius: 30px;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(2, 132, 199, 0.4);
-            transition: all 0.3s ease;
-        }
-
-        .btn-cta:hover {
-            background: #0369a1;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(2, 132, 199, 0.6);
-        }
-
-        /* SECTION CONTAINER */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 70px 24px;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-
-        .section-header h2 {
-            font-size: 28px;
-            font-weight: 700;
-            color: #0f172a;
-        }
-
-        .section-header p {
-            color: #64748b;
-            font-size: 15px;
-            margin-top: 8px;
-        }
-
-        /* MARKETPLACE PRODUCTS & SERVICES GRID */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .product-card {
-            background: #ffffff;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .product-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.1);
-        }
-
-        .product-img {
-            height: 180px;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .img-1 { background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80'); }
-        .img-2 { background-image: url('https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80'); }
-        .img-3 { background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'); }
-
-        .product-content {
+        .card-body {
             padding: 24px;
-            flex: 1;
             display: flex;
             flex-direction: column;
+            flex: 1;
             justify-content: space-between;
         }
 
-        .product-title {
-            font-size: 18px;
+        .card-title {
+            font-size: 20px;
             font-weight: 700;
             color: #0f172a;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
-        .product-desc {
+        .card-tech {
+            font-size: 12px;
+            font-weight: 600;
+            color: #0284c7;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card-desc {
             font-size: 14px;
             color: #64748b;
-            margin-bottom: 20px;
             line-height: 1.6;
+            margin-bottom: 20px;
         }
 
         .btn-card {
             display: block;
             text-align: center;
-            background: #f1f5f9;
-            color: #0f172a;
-            font-weight: 600;
+            background: #0f172a;
+            color: #ffffff;
             font-size: 14px;
-            padding: 10px;
-            border-radius: 8px;
+            font-weight: 600;
+            padding: 12px;
+            border-radius: 10px;
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
         .btn-card:hover {
             background: #0284c7;
-            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
         }
 
-        /* AUDIENCE & VALUE SECTION */
-        .features-section {
-            background: #ffffff;
-            border-top: 1px solid #e2e8f0;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .feature-box {
-            padding: 24px;
-            border-radius: 12px;
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-        }
-
-        .feature-box h3 {
-            font-size: 16px;
-            font-weight: 700;
-            color: #0284c7;
-            margin-bottom: 8px;
-        }
-
-        .feature-box p {
-            font-size: 14px;
-            color: #64748b;
-        }
-
-        /* BACK NAVIGATION BAR */
-        .back-nav {
+        /* ABOUT SECTION */
+        .about-section {
+            background: #0f172a;
+            padding: 60px 24px;
+            color: #94a3b8;
             text-align: center;
-            padding: 30px 20px;
-            background: #f1f5f9;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .back-link {
-            color: #0284c7;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
+        .about-content {
+            max-width: 750px;
+            margin: 0 auto;
         }
 
-        .back-link:hover {
-            text-decoration: underline;
+        .about-title {
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .about-text {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #cbd5e1;
         }
 
         /* FOOTER */
         footer {
-            background: #0f172a;
-            color: #94a3b8;
+            background: #081225;
+            padding: 28px 24px;
             text-align: center;
-            padding: 30px 24px;
             font-size: 13px;
+            color: #64748b;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            line-height: 1.6;
         }
 
         footer strong {
-            color: #f8fafc;
+            color: #94a3b8;
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 30px; }
-            header { padding: 16px 5%; }
+            header {
+                padding: 16px 5%;
+            }
+
+            .hero-title {
+                font-size: 34px;
+            }
+
+            nav {
+                gap: 16px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- NAVBAR -->
+    <!-- HEADER & NAVBAR -->
     <header>
-        <a href="../index.html" class="logo">MARKETPLACE<span>HUB</span></a>
+        <div class="brand-logo">
+            <div class="college-tag">
+                <span class="college-title">E.T. YUCHENGCO</span>
+                <span class="college-sub">College of Business</span>
+            </div>
+        </div>
+
         <nav>
-            <a href="#products">Services</a>
-            <a href="#about">Target Audience</a>
-            <a href="#contact">Contact</a>
+            <a href="#home">Home</a>
+            <a href="#activities">Activities</a>
+            <a href="#about">About</a>
         </nav>
     </header>
 
     <!-- HERO SECTION -->
-    <section class="hero">
-        <span class="hero-badge">CBIA100 Activity 02</span>
-        <h1>Digital Services &amp; Creative Solutions</h1>
-        <p>Connecting innovative branding, modern web solutions, and marketing strategies tailored for students and growing enterprises.</p>
-        <a href="#products" class="btn-cta">Explore Offerings</a>
+    <section class="hero" id="home">
+        <h1 class="hero-title">Student Activity Compilation</h1>
+        <p class="hero-subtitle">HTML &bull; CSS &bull; Creativity &bull; Responsive Design</p>
+        <a href="#activities" class="btn-primary">Explore Activities</a>
     </section>
 
-    <!-- PRODUCT / SERVICE SHOWCASE -->
-    <div class="container" id="products">
-        <div class="section-header">
-            <h2>Featured Offerings</h2>
-            <p>Designed with clear target audiences and structured digital solutions in mind.</p>
-        </div>
+    <!-- FEATURED ACTIVITIES SECTION -->
+    <div class="activities-container" id="activities">
+        <h2 class="section-title">Featured Activities</h2>
 
-        <div class="product-grid">
+        <div class="activity-grid">
 
-            <!-- OFFERING 1 -->
-            <div class="product-card">
-                <div class="product-img img-1"></div>
-                <div class="product-content">
+            <!-- ACTIVITY 01: PROJECT 1 -->
+            <div class="card">
+                <div class="card-preview card-preview-1">
+                    <span class="card-tag">ACTIVITY 01</span>
+                </div>
+                <div class="card-body">
                     <div>
-                        <h3 class="product-title">Brand Identity &amp; Strategy</h3>
-                        <p class="product-desc">Developing cohesive visual positioning, logos, and promotional concepts tailored for local brands and modern enterprises.</p>
+                        <h3 class="card-title">Project 1</h3>
+                        <p class="card-tech">HTML5 &amp; CSS3</p>
+                        <p class="card-desc">A customized showcase presenting personal services, featured offerings, and brand presentation.</p>
                     </div>
-                    <a href="#contact" class="btn-card">Inquire Now &rarr;</a>
+                    <a href="./PERSONAL%20WEBSITE%20MENDOZA/baj.html" class="btn-card">View Project &rarr;</a>
                 </div>
             </div>
 
-            <!-- OFFERING 2 -->
-            <div class="product-card">
-                <div class="product-img img-2"></div>
-                <div class="product-content">
+            <!-- ACTIVITY 02: PROJECT 2 -->
+            <div class="card">
+                <div class="card-preview card-preview-2">
+                    <span class="card-tag">ACTIVITY 02</span>
+                </div>
+                <div class="card-body">
                     <div>
-                        <h3 class="product-title">Responsive Web Design</h3>
-                        <p class="product-desc">Creating modern, user-friendly HTML &amp; CSS websites optimized across mobile, tablet, and desktop devices.</p>
+                        <h3 class="card-title">Project 2</h3>
+                        <p class="card-tech">HTML5 &amp; CSS Layouts</p>
+                        <p class="card-desc">An interactive e-portfolio featuring student background, academic track, skills, and accomplishments.</p>
                     </div>
-                    <a href="#contact" class="btn-card">Inquire Now &rarr;</a>
+                    <a href="./ACTIVITY%203%20E%20PORTFOLIO%20MENDOZA/baj.html" class="btn-card">View Project &rarr;</a>
                 </div>
             </div>
 
-            <!-- OFFERING 3 -->
-            <div class="product-card">
-                <div class="product-img img-3"></div>
-                <div class="product-content">
+            <!-- ACTIVITY 03: RESPONSIVE DESIGN -->
+            <div class="card">
+                <div class="card-preview card-preview-3">
+                    <span class="card-tag">ACTIVITY 03</span>
+                </div>
+                <div class="card-body">
                     <div>
-                        <h3 class="product-title">Digital Media Campaigns</h3>
-                        <p class="product-desc">Crafting structured marketing presentations, critical media analyses, and interactive content campaigns.</p>
+                        <h3 class="card-title">Responsive Design</h3>
+                        <p class="card-tech">CSS3 Media Queries &amp; Flexbox</p>
+                        <p class="card-desc">A modern compilation site engineered to adapt seamlessly across mobile, tablet, and desktop screens.</p>
                     </div>
-                    <a href="#contact" class="btn-card">Inquire Now &rarr;</a>
+                    <a href="#home" class="btn-card">View Project &rarr;</a>
                 </div>
             </div>
 
         </div>
     </div>
 
-    <!-- TARGET AUDIENCE & VALUE PROPOSITION -->
-    <section class="features-section" id="about">
-        <div class="container">
-            <div class="section-header">
-                <h2>Marketplace Overview</h2>
-                <p>Built specifically to satisfy academic rubric requirements with clear audience targeting.</p>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-box">
-                    <h3>Target Audience</h3>
-                    <p>Designed for student entrepreneurs, small businesses, and academic collaborators seeking professional digital marketing assets.</p>
-                </div>
-                <div class="feature-box">
-                    <h3>Core Purpose</h3>
-                    <p>To deliver structured, functional digital solutions that combine web technology with creative marketing concepts.</p>
-                </div>
-                <div class="feature-box">
-                    <h3>Key Benefits</h3>
-                    <p>Fully responsive design, clean semantic HTML5 layout, clear communication pathways, and modern visual aesthetics.</p>
-                </div>
-            </div>
+    <!-- ABOUT SECTION -->
+    <section class="about-section" id="about">
+        <div class="about-content">
+            <h3 class="about-title">About the Student &amp; Project</h3>
+            <p class="about-text">
+                Welcome to my CBIA100 activity compilation page! Through these activities, I gained hands-on experience in building structured HTML5 web pages, styling with CSS3, applying Flexbox and Grid layouts, and implementing media queries for responsive web development across all screen sizes.
+            </p>
         </div>
     </section>
-
-    <!-- RETURN NAVIGATION -->
-    <div class="back-nav">
-        <a href="../index.html" class="back-link">&larr; Back to Main Compilation Landing Page</a>
-    </div>
 
     <!-- FOOTER -->
-    <footer id="contact">
+    <footer>
         <p><strong>Joeffrey Louisean S. Mendoza</strong> &bull; CBIA100 &bull; Academic Year 2025–2026</p>
         <p>E.T. Yuchengco College of Business &bull; Mapúa Malayan Colleges Laguna</p>
     </footer>
